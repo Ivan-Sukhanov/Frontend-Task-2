@@ -1,0 +1,557 @@
+body{
+    margin: 0px;
+    font-size: 14px;
+    line-height: 16px;
+    width: 100%;
+    height: 100%;
+}
+body.lock{
+    overflow: hidden;
+}
+.header{
+    width: 100%;
+    position: fixed;
+    z-index: 5;
+}
+.header__body{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.header__logo{
+    display: inline-block;
+    margin: 20px 0px 15px 30px;
+    z-index: 5;
+    background-image: url("../img/logo.svg");
+    width: 48px;
+    height: 43px;
+}
+.header__burger{
+    display: block;
+    position: fixed;
+    right: 0px;
+    width: 24px;
+    height: 17px;
+    margin: 30px 38px 15px 18px;
+    z-index: 5;
+    transition: all 0.5s ease 0s;
+}
+.header__burger.active{
+    transform: translateY(90vh);
+}
+.header__burger:before,
+.header__burger:after{
+    content: '';
+    background: #FFFFFF;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    left: 0;
+    transition: all 0.3s ease 0s;
+}
+.header__burger:before{
+    top: 0px;
+}
+.header__burger:after{
+    bottom: 0px;
+}
+.header__burger span{
+    position: absolute;
+    background: #FFFFFF;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    top: 7px;
+    transition: all 0.3s ease 0s;
+}
+.header__burger.active:before{
+    transform: rotate(45deg);
+    top: 7px;
+}
+.header__burger.active:after{
+    transform: rotate(-45deg);
+    bottom: 7px;
+}
+.header__burger.active span{
+     transform: scale(0);
+}
+.header__menu{
+    position: fixed;
+    top: -1000%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(17, 17, 17, 0.8);
+    padding: 300px 0px 0px 0px;
+    transition: all 0.5s ease 0s;
+}
+.header__menu.active{
+    top: 0;
+}
+.header__list{
+    display: block;
+    text-align: center;
+    padding: 0;
+}
+.header__list li{
+    list-style: none;
+    margin: 0px 0px 20px 0px;
+    color: #FFFFFF;
+}
+li:active:hover{
+    text-decoration:underline
+}
+.header__link{
+    color: #FFFFFF;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+}
+.header_scroll{
+    background: rgba(17, 17, 17, 1);
+}
+.welcome{
+    height: 100vh;
+    background-image: url("../img/background.png");
+    background-size: cover;
+    background-position: center center;
+ }
+.welcome-container{
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.welcome-title{
+     font-family: Amatic SC;
+     font-size: 96px;
+     font-style: normal;
+     font-weight: normal;
+     line-height: 121px;
+     text-align: center;
+     color: rgba(255, 255, 255, 0.8);
+     margin: 0px;
+     text-transform: uppercase;
+ }
+.welcome-subtitle{
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 16px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0px;
+}
+.btn_scroll{
+    background-color: transparent;
+    border-color: transparent;
+    width: 100%;
+    margin-bottom: 35px;
+    position: absolute;
+    bottom: -10px;
+    animation: move 2s linear infinite;
+}
+@keyframes move {
+    0% {
+        bottom: -10px;
+    }
+    50%{
+        bottom: 20px;
+    }
+    100%{
+        bottom: -10px;
+    }
+}
+.block{
+    text-align: center;
+}
+.block__title{
+    font-family: Amatic SC;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 45px;
+    padding: 100px 0px 0px 0px;
+    margin: 0;
+}
+.block__item {
+    padding: 55px 15px 0px 15px;
+    text-align: left;
+}
+.block__boximg{
+    background: #FFFFFF;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    max-width: 380px;
+    height: 297px;
+    overflow: hidden;
+}
+.block__img{
+    left: -25px;
+}
+.block__name-item{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    text-decoration-line: underline;
+    margin: 20px 0px 20px 0px;
+}
+.block__text-item{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    -webkit-line-clamp: 10;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.block__boxtext{
+    margin: 0px 20px 0px 20px;
+}
+.block__container{
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 0px 100px 0px;
+}
+@media screen and (min-width: 900px){
+    body.lock{
+        overflow: visible;
+    }
+    .header__menu{
+        position: absolute;
+        top: 0px;
+        padding: 0;
+        background: rgba(0, 0, 0, 0);
+    }
+    .header__burger{
+        display: none;
+    }
+    .header__list {
+        display: flex;
+        float: right;
+        margin: 40px 130px 0px 0px;
+        padding: 23px;
+    }
+    .header__list li{
+        margin: 0px 20px 20px 0px;
+    }
+    .header__logo{
+        background-image: url("../img/logo_pc.svg");
+        margin: 30px 0px 20px 130px;
+        width: 80px;
+        height: 72px;
+    }
+    .block__item{
+        display: flex;
+        padding: 55px 130px 0px 130px;
+    }
+    .block__boximg{
+        min-width: 380px;
+    }
+    .block{
+        background-color: rgba(238, 238, 238, 1);
+    }
+
+    .block__item:nth-child(even) div.block__boxtext{
+        order: 0;
+    }
+    .block__item:nth-child(even) div.block__boximg{
+        order: 1;
+    }
+    .block__name-item{
+        margin-top: 0px;
+        margin-bottom: 24px;
+    }
+    .block__text-item{
+        -webkit-line-clamp: 15;
+    }
+
+}
+                *,
+            *::after,
+            *::before {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                text-decoration: none;
+            }
+            .tours {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                background: #FFFFFF;
+                padding: 1em;
+            }
+            .tours__title {
+                font-family: Amatic SC;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 48px;
+                line-height: 61px;
+                text-align: center;
+                flex-basis: 100%;
+            }
+            .tours__list {
+                padding: 1em;
+                display: flex;
+                flex-basis: 98%;
+                flex-wrap: wrap;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                box-sizing: border-box;
+            }
+            .tour {
+                height: 375px;
+                width: 375px;
+                ;
+                margin: 10px;
+                display: flex;
+                align-items: flex-end;
+                flex-wrap: wrap;
+                flex-direction: row;
+                justify-content: space-around;
+                flex-basis: 30%;
+                background-image: url(../img/tour_bg.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+                box-sizing: border-box;
+            }
+            .btn--toggle-items {
+                    display: none;
+                border: none;
+                color: 9F9F9F;
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 16px;
+                background: #FFFFFF;
+                 }
+            .tour div {
+                background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, rgba(255, 255, 255, 0.67) 23.96%, #EEEEEE 78.65%);
+                padding: 15px 25px;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .tour__title {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 18px;
+                line-height: 21px;
+                margin-bottom: 20px;
+                flex-basis: 100%;
+            }
+            .tour__short-description {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 200;
+                font-size: 14px;
+                line-height: 16px;
+                flex-basis: 100%;
+                margin-bottom: 20px;
+            }
+            .tour__price {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 200;
+                font-size: 24px;
+                line-height: 28px;
+                flex-basis: 48%;
+            }
+            .tour__price span {
+                font-weight: bold;
+            }
+            .tour__button {
+                border: 1px solid #C3B182;
+                padding: 17px 23px;
+                color: rgba(195, 177, 130, 1);
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 16px;
+                letter-spacing: 0.05em;
+                flex-basis: 30%;
+            }
+            .btn--toggle-items {
+             
+                padding: 10px 15px;
+                border-radius: 8px;
+                margin-top: 10px;
+
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 16px;
+            }
+
+           
+            .tours_list--all-hidden-visible .tour--hidden {
+                display: flex;
+            }
+            .contacts {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                padding: 60px;
+                background-color: #EEEEEE;
+            }
+            .contacts__title {
+                font-family: Amatic SC;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 48px;
+                line-height: 61px;
+                margin-bottom: 1em;
+                text-align: center;
+                flex-basis: 100%;
+            }
+            .contacts__data li {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 16px;
+                color: #000000;
+                margin-top: 3em;
+            }
+            .contacts__data li:nth-child(1)::before {
+                width: 24px;
+                height: 24px;
+                background-size: 24px 24px;
+                float: left;
+                margin-right: 5px;
+                display: block;
+                content: ' ';
+                background-image: url(../img/contacts__data-addres.svg);
+            }
+            .contacts__data li:nth-child(2)::before {
+                width: 24px;
+                height: 24px;
+                background-size: 24px 24px;
+                float: left;
+                margin-right: 5px;
+                display: block;
+                content: ' ';
+                background-image: url(../img/contacts__data-phonenumber.svg);
+            }
+            .contacts__data li:nth-child(3)::before {
+                width: 24px;
+                height: 24px;
+                background-size: 24px 24px;
+                float: left;
+                margin-right: 5px;
+                display: block;
+                content: ' ';
+                background-image: url(../img/contacts__data-email.svg);
+            }
+            .footer {
+                background: #242424;
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                padding: 3em 1em 5em 1em;
+            }
+            .footer__menu li {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 200;
+                font-size: 14px;
+                line-height: 16px;
+                color: #FFFFFF;
+                margin-bottom: 1em;
+            }
+            .footer__menu li:first-child {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 16px;
+                color: #FFFFFF;
+                margin-bottom: 2em;
+            }
+            .footer__contacts li {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 16px;
+                color: #FFFFFF;
+            }
+            .footer__contacts li:first-child {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 16px;
+                color: #FFFFFF;
+                margin-bottom: 2em;
+            }
+            .footer__copirate {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 16px;
+                color: #FFFFFF;
+            }
+            @media (max-width: 1340px) {
+                .tour {
+                    flex-basis: 48%;
+                }
+                .contacts__map {
+                    margin-top: 2em;
+                }
+            }
+            @media (max-width: 1058px) {
+                .tour {
+                    flex-basis: 90%;
+                    max-width: 380px;
+                }
+                .footer__contacts {
+                    display: none;
+                }
+                .footer__menu {
+                    display: none;
+                }
+                .btn--toggle-items {
+                    display: block;
+                 }
+                 .tour--hidden {
+                display: none;
+            }
+            }
+            @media (max-width: 980px) {
+                .tour {
+                    flex-basis: 90%;
+                    max-width: 380px;
+                }
+                .footer__contacts {
+                    display: none;
+                }
+                .footer__menu {
+                    display: none;
+                }
+                .tour {
+                    margin: 0;
+                    margin-top: 1em;
+                }
+                .tours__list {
+                    padding: 0;
+                }
+            }
