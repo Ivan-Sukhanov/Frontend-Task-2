@@ -1,3 +1,29 @@
+document.addEventListener('DOMContentLoaded', init)
+
+function init()  {
+    const buttonToggleItems = document.getElementsByClassName('btn--toggle-items')
+
+    if(buttonToggleItems.length === 0) {
+        throw new Error('Кнопка не найдена')
+    }
+
+    const listItemsContainer = document.getElementsByClassName('tours__list')
+
+    buttonToggleItems[0].addEventListener('click', (event) => handleToggleItemsButtonClick(listItemsContainer[0], event))
+}
+
+const handleToggleItemsButtonClick = (listItemsContainer, pointerEvent) => {
+    const classForVisibleHiddenItems = 'tours_list--all-hidden-visible'
+
+    if (pointerEvent.currentTarget.innerText === 'Больше туров') {
+        pointerEvent.currentTarget.innerText = 'Скрыть туры'
+        listItemsContainer.classList.add(classForVisibleHiddenItems)
+    } else {
+        pointerEvent.currentTarget.innerText = 'Показать больше'
+        listItemsContainer.classList.remove(classForVisibleHiddenItems)
+    }
+}
+
 document.addEventListener('DOMContentLoaded', ClickBurger)
 
 function ClickBurger(){
